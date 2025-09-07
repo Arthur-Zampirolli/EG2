@@ -15,7 +15,7 @@ export default class PullRequestController{
                 nodes {
                   number
                   title
-                  comments(first: 10) {
+                  comments(first: 100) {
                     nodes {
                       author {
                         login
