@@ -1,4 +1,6 @@
 import { GraphQLClient, gql } from 'graphql-request';
+import * as dotenv from 'dotenv'
+dotenv.config({ path: ".env" })
 
 const API_TOKEN = process.env.API_TOKEN;
 
