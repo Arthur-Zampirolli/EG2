@@ -16,6 +16,7 @@
     "axios": "^1.11.0",
     "dotenv": "^17.2.2",
     "graphql-request": "^7.2.0",
+    "json-2-csv": "^5.5.9",
     "save-dev": "^0.0.1-security",
     "tsx": "^4.20.5",
     "yarn": "^1.22.22"
