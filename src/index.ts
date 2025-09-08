@@ -37,11 +37,11 @@ async function saveCSV(content: any[], path: string) {
             }
         );
         //console.log(`saving ${JSON.stringify(content)} to ${path}`)
-        writeFileSync(path, csv, { flag: 'w' });
+        writeFileSync(path, csv,'utf-8');
     } catch (error) {
         throw new Error(error.message)
     }
 }
 
-//save(await getFirst50(), '50-PR.json')
+//saveJSON(JSON.stringify(await getFirst50()), '50-PR.json')
 saveCSV(await getComments(), 'comments-PR.csv')
