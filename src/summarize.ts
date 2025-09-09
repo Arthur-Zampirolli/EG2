@@ -210,7 +210,7 @@ function generateReportHTML(results: IAnalysisResults): string {
         <div class="question-title">d) Qual é o número médio de comentários por pull request na amostra analisada?</div>
         <div class="answer">
             <strong>Média de comentários por PR:</strong> <span class="highlight">${results.avgCommentsPerPR.toFixed(2)}</span> comentários/PR<br>
-            <small>Baseado em ${results.uniquePRs} PRs únicos analisados</small>
+            <small>Baseado em ${results.uniquePRs} PRs únicos analisados(que possuem comentários)</small>
         </div>
     </div>
 
