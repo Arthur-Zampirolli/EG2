@@ -184,7 +184,12 @@ function generateReportHTML(results: IAnalysisResults): string {
         <p>Análise automatizada de comentários em repositórios GitHub</p>
         <p>Data de geração: ${new Date().toLocaleDateString('pt-BR')}</p>
     </div>
-
+    <div class="question">
+        <div class="question-title">Repositório da solução(URL do GitHub)</div>
+        <div class="answer">
+            <strong>Repositório:</strong> <span class="highlight">https://github.com/Arthur-Zampirolli/EG2</span>
+        </div>
+    </div>
     <div class="question">
         <div class="question-title">a) Qual é o número do Grupo e os nomes dos participantes?</div>
         <div class="answer">
@@ -210,7 +215,7 @@ function generateReportHTML(results: IAnalysisResults): string {
         <div class="question-title">d) Qual é o número médio de comentários por pull request na amostra analisada?</div>
         <div class="answer">
             <strong>Média de comentários por PR:</strong> <span class="highlight">${results.avgCommentsPerPR.toFixed(2)}</span> comentários/PR<br>
-            <small>Baseado em ${results.uniquePRs} PRs únicos analisados(que possuem comentários)</small>
+            <small>Baseado em ${results.uniquePRs} PRs únicos analisados(que possuem comentários</small>
         </div>
     </div>
 
