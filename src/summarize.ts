@@ -53,22 +53,20 @@ async function main() {
 
 async function analyzeCSVData(csvPath: string): Promise<IAnalysisResults> {
   console.log("🔍 Analisando dados do CSV...");
-  
   const csvContent = readFileSync(csvPath, 'utf-8');
+
   const lines = csvContent.split('\n').slice(1); // Remove header
-  
   const comments: ICommentData[] = [];
   
   // Parse CSV (tratando aspas - vírgulas já foram removidas na geração)
   for (const line of lines) {
     if (line.trim() === '') continue;
     
-    const match = line.match(/^(\d+),"(.*)"/);
-    if (match) {
-      const pr_id = parseInt(match[1]);
-      const comment = match[2].replace(/""/g, '"'); // Unescape aspas duplas
-      comments.push({ pr_id, comment });
-    }
+
+    const splitted = line.split(',')
+    const pr_id = parseInt(splitted[0]);
+    const comment = splitted[1].replace(/""/g, '"'); // Unescape aspas duplas
+    comments.push({ pr_id, comment });
   }
   
   // Análises
@@ -106,7 +104,6 @@ async function analyzeCSVData(csvPath: string): Promise<IAnalysisResults> {
       }
     }
   });
-  
   return {
     totalComments,
     uniquePRs,
@@ -191,7 +188,7 @@ function generateReportHTML(results: IAnalysisResults): string {
     <div class="question">
         <div class="question-title">a) Qual é o número do Grupo e os nomes dos participantes?</div>
         <div class="answer">
-            <strong>Participantes:</strong> Elias Lopes, Arthur Zampirolli, Victor Albino, Victor Fernandes
+            <strong>Participantes:</strong> Arthur Zampirolli, Elias Lopes, Victor Albino e Victor Fernandes
         </div>
     </div>
 
