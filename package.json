@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "npx tsx ./src/index.ts",
+    "analyze": "npx tsx ./src/api-calls-example.ts",
+    "summarize": "npx tsx ./src/summarize.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +19,10 @@
     "dotenv": "^17.2.2",
     "graphql-request": "^7.2.0",
     "graphql-tag": "^2.12.6",
+    "html2canvas": "^1.4.1",
     "json-2-csv": "^5.5.9",
+    "jspdf": "^3.0.2",
+    "puppeteer": "^24.19.0",
     "save-dev": "^0.0.1-security",
     "tsx": "^4.20.5",
     "yarn": "^1.22.22"
